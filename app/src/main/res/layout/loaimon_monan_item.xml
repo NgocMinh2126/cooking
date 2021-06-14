@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/size150dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/size10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="@dimen/size5dp">
+    <LinearLayout
+        android:id="@+id/loaimon_monan_item"
+        android:layout_width="@dimen/size150dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="@dimen/size150dp"
+            android:layout_height="@dimen/size100dp"
+            android:src="@drawable/chan_gio_kho_tieu"
+            android:scaleType="fitXY"
+            android:id="@+id/img_loaimon_monan_item"/>
+
+        <TextView
+            android:id="@+id/tv_ten_loaimon_monan_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_tv_loaimon_monan_item"
+            android:fontFamily="@font/patrick_hand"
+            android:text="Chân giò kho tiêu"
+            android:textAlignment="center" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

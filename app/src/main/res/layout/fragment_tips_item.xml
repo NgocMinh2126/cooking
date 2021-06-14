@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/size20dp">
+    <LinearLayout
+        android:id="@+id/tips_ln_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/tips_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size200dp"
+            android:src="@drawable/tip_img_01"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:id="@+id/tips_tv_ten"
+            android:padding="@dimen/size5dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size50dp"
+            android:text="Mẹo nêm nếm gia vị"
+            android:gravity="center"
+            android:textSize="@dimen/textsize16sp"
+            android:background="@drawable/bg_monan_trangchu_item"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

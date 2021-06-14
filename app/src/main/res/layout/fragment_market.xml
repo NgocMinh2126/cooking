@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="@dimen/size5dp"
+        android:id="@+id/tieude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/itim"
+        android:text="Nguyên liệu hôm nay"
+        android:textSize="@dimen/textsize22sp"
+        android:textColor="@color/color_text"/>
+    <TableLayout
+        android:layout_below="@+id/tieude"
+        android:id="@+id/tb_nglieu"
+        android:layout_marginLeft="@dimen/size10dp"
+        android:layout_marginTop="@dimen/size15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize16sp"
+                android:text="Nguyên liệu"
+                android:layout_weight="1"/>
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize16sp"
+                android:text="Số lượng"
+                android:layout_weight="1"/>
+            <TextView
+                android:text="Đánh dấu"
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize16sp"
+                android:layout_weight="1"/>
+        </TableRow>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/size5dp"
+            android:id="@+id/rv_market"/>
+    </TableLayout>
+    <RelativeLayout
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ln_baoloi"
+        android:layout_below="@+id/tieude">
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/img_ic"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/size40dp"
+            android:layout_height="@dimen/size40dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_listthucdon"/>
+        <TextView
+            android:layout_below="@+id/img_ic"
+            android:id="@+id/tv_kocothucdon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/patrick_hand"
+            android:text="Bạn chưa có thực đơn hôm nay!"
+            android:textSize="@dimen/textsize16sp"
+            android:textAlignment="center" />
+    </RelativeLayout>
+</RelativeLayout>

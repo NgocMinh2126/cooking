@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginTop="@dimen/size10dp"
+            android:layout_marginLeft="@dimen/size10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Nổi bật"
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize22sp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginLeft="@dimen/size10dp"
+                android:layout_marginTop="@dimen/size10dp"
+                android:id="@+id/rv_noibat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="@dimen/size20dp"
+            android:layout_marginLeft="@dimen/size10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hôm nay ăn gì?"
+                android:textSize="@dimen/textsize16sp"
+                android:textColor="@color/color_text_Btn"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginLeft="@dimen/size5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_trangchu_homnayangi"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginLeft="@dimen/size10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_trangchu_loaimon"/>
+        <TextView
+            android:layout_marginTop="@dimen/size10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

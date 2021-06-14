@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/size20dp"
+    android:orientation="vertical"
+    android:id="@+id/loaimon_trangchu_item">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_ten_loaimon_trangchu_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Các món canh"
+            android:textColor="@color/color_text_Btn"
+            android:textSize="@dimen/textsize16sp" />
+        <Button
+            android:id="@+id/btn_tatca_loaimon_trangchu_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="0dp"
+            android:text="Tất cả >"
+            android:textSize="@dimen/textsize16sp"
+            android:textAllCaps="false"
+            android:background="@null"
+            android:textColor="@color/color_text_Btn"/>
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginLeft="@dimen/size5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_trangchu_loaimon_item"/>
+</LinearLayout>

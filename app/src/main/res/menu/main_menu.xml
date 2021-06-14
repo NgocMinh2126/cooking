@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/monan_yeuthich"
+            android:title="Món ăn yêu thích"
+            />
+        <item
+            android:id="@+id/thucdon"
+            android:title="Thực đơn"
+            />
+    </group>
+    <item android:title="Danh sách món ăn">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/monan_thuongngay"
+                    android:title="Bữa ăn thường ngày"/>
+                <item
+                    android:id="@+id/chaosup"
+                    android:title="Cháo/súp"/>
+                <item
+                    android:id="@+id/monnuong"
+                    android:title="Các món nướng"/>
+                <item
+                    android:id="@+id/trangmieng"
+                    android:title="Món tráng miệng"/>
+            </group>
+        </menu>
+    </item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/anchay"
+            android:title="Món ăn chay"/>
+        <item
+            android:id="@+id/giamcan"
+            android:title="Giảm cân"/>
+    </group>
+    <item android:title="Khác">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/lienhe"
+                    android:title="Liên hệ"/>
+                <item
+                    android:id="@+id/chinhsach"
+                    android:title="Chính sách và quyền riêng tư"/>
+            </group>
+        </menu>
+    </item>
+</menu>
