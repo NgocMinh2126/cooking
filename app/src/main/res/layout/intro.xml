@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/intro_01"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_marginTop="@dimen/size50dp"
+        android:layout_width="@dimen/size150dp"
+        android:layout_height="@dimen/size150dp"
+        android:src="@drawable/logo_trans"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/logo_intro"/>
+
+    <TextView
+        android:id="@+id/appname_intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="Cooking with 3CAN5"
+        android:textSize="@dimen/textsize24sp"
+        android:textAlignment="center" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/intro_hambuger"
+        app:lottie_autoPlay="true"
+        android:layout_marginTop="@dimen/size50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size200dp"
+        android:layout_gravity="center_horizontal"
+        app:lottie_rawRes="@raw/hambuger"/>
+</LinearLayout>

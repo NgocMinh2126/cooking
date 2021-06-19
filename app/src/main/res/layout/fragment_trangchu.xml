@@ -18,6 +18,19 @@
                 android:text="Nổi bật"
                 android:textStyle="bold"
                 android:textSize="@dimen/textsize22sp"/>
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/noibat_ani">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <include layout="@layout/monannoibat_item_shimmer"></include>
+                    <include layout="@layout/monannoibat_item_shimmer"></include>
+                    <include layout="@layout/monannoibat_item_shimmer"></include>
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_marginLeft="@dimen/size10dp"
                 android:layout_marginTop="@dimen/size10dp"
@@ -37,12 +50,41 @@
                 android:text="Hôm nay ăn gì?"
                 android:textSize="@dimen/textsize16sp"
                 android:textColor="@color/color_text_Btn"/>
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/homnayangi_ani">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <include layout="@layout/homnayangi_item_ani"></include>
+                    <include layout="@layout/homnayangi_item_ani"></include>
+                    <include layout="@layout/homnayangi_item_ani"></include>
+                    <include layout="@layout/homnayangi_item_ani"></include>
+                    <include layout="@layout/homnayangi_item_ani"></include>
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
             <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
                 android:layout_marginLeft="@dimen/size5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/rv_trangchu_homnayangi"/>
         </LinearLayout>
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loaimon_ani">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/loaimon_trangchu_ani"></include>
+                <include layout="@layout/loaimon_trangchu_ani"></include>
+                <include layout="@layout/loaimon_trangchu_ani"></include>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_marginLeft="@dimen/size10dp"
             android:layout_width="match_parent"

@@ -5,12 +5,13 @@
 
     <TextView
         android:layout_marginTop="@dimen/size5dp"
+        android:layout_marginLeft="@dimen/size5dp"
         android:id="@+id/tieude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/itim"
-        android:text="Nguyên liệu hôm nay"
-        android:textSize="@dimen/textsize22sp"
+        android:text="Nguyên liệu cho thực đơn của bạn"
+        android:textSize="@dimen/textsize24sp"
         android:textColor="@color/color_text"/>
     <TableLayout
         android:layout_below="@+id/tieude"
@@ -37,7 +38,7 @@
                 android:layout_weight="1"/>
         </TableRow>
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="@dimen/size5dp"
+            android:layout_marginTop="@dimen/size10dp"
             android:id="@+id/rv_market"/>
     </TableLayout>
     <RelativeLayout

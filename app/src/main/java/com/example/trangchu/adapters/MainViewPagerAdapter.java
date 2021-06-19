@@ -11,9 +11,12 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.trangchu.fragments.MarketFragment;
 import com.example.trangchu.fragments.TipsFragment;
 import com.example.trangchu.fragments.TrangChufragment;
+import com.example.trangchu.models.Tips;
 
 public class MainViewPagerAdapter extends FragmentStatePagerAdapter {
-
+    static TrangChufragment trangchu = new TrangChufragment();
+    static MarketFragment market = new MarketFragment();
+    static TipsFragment tip = new TipsFragment();
 
     public MainViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);

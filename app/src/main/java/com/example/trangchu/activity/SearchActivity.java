@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -30,11 +31,22 @@ import com.example.trangchu.adapters.Search_LoaiMon_Adapter;
 import com.example.trangchu.adapters.Search_Monan_Adapter;
 import com.example.trangchu.models.LoaiMon;
 import com.example.trangchu.models.MonAn;
+import com.example.trangchu.service.HttpUtils;
+import com.facebook.shimmer.ShimmerFrameLayout;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import cz.msebera.android.httpclient.Header;
+
 public class SearchActivity extends AppCompatActivity {
     RecyclerView search_monan_rv;
+    ShimmerFrameLayout search_monan_shimmer;
     ArrayList<MonAn> listMonAn;  //luu tat ca cac mon an
     Search_Monan_Adapter search_monan_adapter;
     ImageButton btn_search;
@@ -50,69 +62,20 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.search_layout);
 
         btn_back=findViewById(R.id.search_back_btn);
+        search_monan_shimmer=findViewById(R.id.search_monan_shimmer);
         btn_search=findViewById(R.id.search_btn);
         tv_searchkey=findViewById(R.id.search_tv_keyword);
         search_monan_rv=findViewById(R.id.search_rv_monan);
+        setDataMonAn(SearchActivity.this);
         GridLayoutManager search_monan_layout=new GridLayoutManager(this,3);
         search_monan_rv.setLayoutManager(search_monan_layout);
-        listMonAn=new ArrayList<MonAn>();
-        listMonAn=setDataMonAn();
-        search_monan_adapter=new Search_Monan_Adapter();
-        //set data
-        search_monan_adapter.setData(new IRecycleViewClickListerner() {
-            @Override
-            public void onItemClick(MonAn monan) {
-                Toast.makeText(SearchActivity.this,monan.getTen(),Toast.LENGTH_SHORT).show();
-            }
-        },listMonAn);
-        search_monan_rv.setAdapter(search_monan_adapter);
-        //search khi nhan nut search
-        btn_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String keyword=tv_searchkey.getText().toString();
-                search_monan_adapter.getFilter().filter(keyword);
-                search_monan_rv.setAdapter(search_monan_adapter);
-            }
-        });
-        //search khi thay doi text nhap vao
-        tv_searchkey.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String keyword=tv_searchkey.getText().toString();
-                search_monan_adapter.getFilter().filter(keyword);
-                search_monan_rv.setAdapter(search_monan_adapter);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-        //search khi nhan nut tren ban phim
-        tv_searchkey.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId==EditorInfo.IME_ACTION_SEARCH){
-                    String keyword=tv_searchkey.getText().toString();
-                    search_monan_adapter.getFilter().filter(keyword);
-                    search_monan_rv.setAdapter(search_monan_adapter);
-                }
-                return false;
-            }
-        });
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("chkSearch","hihi");
                 Intent intent = new Intent(SearchActivity.this, MainActivity.class);
-                //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                finish();
+                //finish();
             }
         });
 
@@ -120,7 +83,6 @@ public class SearchActivity extends AppCompatActivity {
         search_loaimon_rv=findViewById(R.id.search_rv_loaimon);
         LinearLayoutManager search_loaimon_layout=new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         search_loaimon_rv.setLayoutManager(search_loaimon_layout);
-        listLoaiMon=new ArrayList<LoaiMon>();
         listLoaiMon=setDataLoaiMon();
         search_loaiMon_adapter =new Search_LoaiMon_Adapter();
         search_loaiMon_adapter.setData(listLoaiMon, new ILoaiMonClickListener() {
@@ -131,42 +93,95 @@ public class SearchActivity extends AppCompatActivity {
         });
         search_loaimon_rv.setAdapter(search_loaiMon_adapter);
     }
-    public ArrayList<MonAn>setDataMonAn(){
+    public ArrayList<MonAn> setDataMonAn(Context context){
         ArrayList<MonAn>list=new ArrayList<MonAn>();
-        list.add(new MonAn("Chân giò kho tiêu",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Gà hấp hành",R.drawable.tom_rang_muoi));
-        list.add(new MonAn("Canh khoai từ",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Khổ qua nhồi thịt",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Kem chuối",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Chân giò kho tiêu",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Gà hấp hành",R.drawable.tom_rang_muoi));
-        list.add(new MonAn("Canh khoai từ",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Khổ qua nhồi thịt",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Kem chuối",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Chân giò kho tiêu",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Gà hấp hành",R.drawable.tom_rang_muoi));
-        list.add(new MonAn("Canh khoai từ",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Khổ qua nhồi thịt",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Kem chuối",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Chân giò kho tiêu",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Gà hấp hành",R.drawable.tom_rang_muoi));
-        list.add(new MonAn("Canh khoai từ",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Khổ qua nhồi thịt",R.drawable.chan_gio_kho_tieu));
-        list.add(new MonAn("Kem chuối",R.drawable.chan_gio_kho_tieu));
-        return list;
+        RequestParams rp = new RequestParams();
+        HttpUtils.get("monan/", rp, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONArray listMonAn = response.getJSONArray("dsmonan");
+                    if (listMonAn != null) {
+                        for (int i=0;i<listMonAn.length();i++){
+                            JSONObject obj = listMonAn.optJSONObject(i);
+                                MonAn m=new MonAn(obj.getString("_id"),obj.getString("Ten"),obj.getString("Anh"));
+                                list.add(m);
+
+                        }
+                        search_monan_adapter=new Search_Monan_Adapter();
+                        search_monan_adapter.setData(list, new IRecycleViewClickListerner() {
+                            @Override
+                            public void onItemClick(MonAn monan) {
+                                Toast.makeText(context,monan.getTenMonAn(),Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        search_monan_rv.setAdapter(search_monan_adapter);
+                        search_monan_shimmer.startShimmer();
+                        search_monan_shimmer.setVisibility(View.GONE);
+                        btn_search.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String keyword=tv_searchkey.getText().toString();
+                                search_monan_adapter.getFilter().filter(keyword);
+                                search_monan_rv.setAdapter(search_monan_adapter);
+                            }
+                        });
+                        tv_searchkey.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                            @Override
+                            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                                if(actionId==EditorInfo.IME_ACTION_SEARCH){
+                                    String keyword=tv_searchkey.getText().toString();
+                                    search_monan_adapter.getFilter().filter(keyword);
+                                    search_monan_rv.setAdapter(search_monan_adapter);
+                                }
+                                return false;
+                            }
+                        });
+                        Log.i("chkSearch","Số lượng"+list.size());
+//                        tv_searchkey.addTextChangedListener(new TextWatcher() {
+//                            @Override
+//                            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                                Log.i("chkSearch","huhu");
+//                                String keyword=tv_searchkey.getText().toString();
+//                                search_monan_adapter.getFilter().filter(keyword);
+//                                search_monan_rv.setAdapter(search_monan_adapter);
+//                            }
+//
+//                            @Override
+//                            public void afterTextChanged(Editable s) {
+//
+//                            }
+//                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+       return list;
     }
+
     public ArrayList<LoaiMon>setDataLoaiMon(){
         ArrayList<LoaiMon> list=new ArrayList<LoaiMon>();
-        LoaiMon loaimon1=new LoaiMon("Loại 1");
-        LoaiMon loaimon2=new LoaiMon("Món ăn thường ngày");
-        LoaiMon loaimon3=new LoaiMon("Chè các loai");
-        LoaiMon loaimon4=new LoaiMon("Món nướng");
-        LoaiMon loaimon5=new LoaiMon("Món ăn chay");
-        list.add(loaimon1);
-        list.add(loaimon2);
-        list.add(loaimon3);
-        list.add(loaimon4);
-        list.add(loaimon5);
+        list.add(new LoaiMon("Món canh","60935f3e3212664344ac98bf"));
+        list.add(new LoaiMon("Món xào","60935f3e3212664344ac98c1"));
+        list.add(new LoaiMon("Món kho","60935f3e3212664344ac98c0"));
+        list.add(new LoaiMon("Món chiên","60935f3e3212664344ac98c2"));
+        list.add(new LoaiMon("Món ăn vặt","60935f3e3212664344ac98c3"));
+        list.add(new LoaiMon("Các món nướng","60935f3e3212664344ac98c4"));
+        list.add(new LoaiMon("Đồ uống","60935f3e3212664344ac98c5"));
+        list.add(new LoaiMon("Món ăn chay","60935f3e3212664344ac98c6"));
+        list.add(new LoaiMon("Giảm cân","60935f3e3212664344ac98c7"));
+        list.add(new LoaiMon("Các món chè","60935f3e3212664344ac98c8"));
+        list.add(new LoaiMon("Các loại bánh","60935f3e3212664344ac98c9"));
+        list.add(new LoaiMon("Món tráng miệng","60935f3e3212664344ac98ca"));
+        list.add(new LoaiMon("Các món cháo, súp","60935f3e3212664344ac98cb"));
+        list.add(new LoaiMon("Salad các loại","60935f3e3212664344ac98cc"));
         return list;
     }
 }

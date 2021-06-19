@@ -1,5 +1,7 @@
 package com.example.trangchu.adapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,9 @@ import com.example.trangchu.IRecycleViewClickListerner;
 import com.example.trangchu.R;
 import com.example.trangchu.models.MonAn;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 //mon an noi bat trang chu
 public class TC_MonAnAdapter extends RecyclerView.Adapter<TC_MonAnAdapter.TrangChuMonAnViewHolder>
@@ -42,8 +47,16 @@ public class TC_MonAnAdapter extends RecyclerView.Adapter<TC_MonAnAdapter.TrangC
         }else{
             holder.trangchu_tv_ten_monan_item.setBackgroundResource(R.drawable.bg_monan_trangchu_item_2);
         }
-        holder.trangchu_img_monan_item.setImageResource(monan.getAnh());
-        holder.trangchu_tv_ten_monan_item.setText(monan.getTen());
+        try {
+            URL url=new URL(monan.getAnh());
+            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            holder.trangchu_img_monan_item.setImageBitmap(bmp);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        holder.trangchu_tv_ten_monan_item.setText(monan.getTenMonAn());
         holder.monannoibat_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +67,7 @@ public class TC_MonAnAdapter extends RecyclerView.Adapter<TC_MonAnAdapter.TrangC
 
     @Override
     public int getItemCount() {
-        if(listMonAn.size()!=0){
+        if(listMonAn!=null){
             return listMonAn.size();
         }
         return 0;

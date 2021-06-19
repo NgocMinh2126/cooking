@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size60dp"
+        android:orientation="horizontal"
+        android:background="@color/color_basic"
+        android:weightSum="7">
+        <ImageButton
+            android:id="@+id/search_back_btn"
+            android:layout_width="@dimen/size50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_back"
+            android:background="@null"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/dsmonan_ten_loaimon"
+            android:textSize="@dimen/textsize24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/itim"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:text="Các món ăn thường ngày" />
+    </LinearLayout>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dsmonan_ani">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/dsmonan_item_ani"></include>
+            <include layout="@layout/dsmonan_item_ani"></include>
+            <include layout="@layout/dsmonan_item_ani"></include>
+            <include layout="@layout/dsmonan_item_ani"></include>
+            <include layout="@layout/dsmonan_item_ani"></include>
+            <include layout="@layout/dsmonan_item_ani"></include>
+            <include layout="@layout/dsmonan_item_ani"></include>
+            <include layout="@layout/dsmonan_item_ani"></include>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginLeft="@dimen/size10dp"
+        android:layout_marginRight="@dimen/size10dp"
+        android:layout_marginBottom="@dimen/size10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dsmonan_rv"/>
+</LinearLayout>

@@ -18,4 +18,6 @@
     <color name="color_text_Btn">#5f630b</color>
     <color name="color_homnayangi_bg">#f0edb1</color>
     <color name="color_text">#727535</color>
+    <color name="colorGrey">#dddddd</color>
+    <color name="color_tips_01">#33000000</color>
 </resources>

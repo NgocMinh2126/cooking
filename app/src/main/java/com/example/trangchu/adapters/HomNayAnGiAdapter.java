@@ -1,5 +1,7 @@
 package com.example.trangchu.adapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.trangchu.IRecycleViewClickListerner;
 import com.example.trangchu.R;
 import com.example.trangchu.models.MonAn;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class HomNayAnGiAdapter extends RecyclerView.Adapter<HomNayAnGiAdapter.HomNayAnGiViewHolder> {
@@ -38,8 +44,16 @@ public class HomNayAnGiAdapter extends RecyclerView.Adapter<HomNayAnGiAdapter.Ho
         if(monan==null){
             return;
         }
-        holder.img_monan_homnayangi.setImageResource(monan.getAnh());
-        holder.tv_ten_monan_homnayangi.setText(monan.getTen());
+        try {
+            URL url=new URL(monan.getAnh());
+            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            holder.img_monan_homnayangi.setImageBitmap(bmp);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        holder.tv_ten_monan_homnayangi.setText(monan.getTenMonAn());
         holder.homnayangi_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

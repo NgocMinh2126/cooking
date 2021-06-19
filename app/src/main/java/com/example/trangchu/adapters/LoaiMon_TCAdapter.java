@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,19 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.trangchu.IRecycleViewClickListerner;
 import com.example.trangchu.R;
-import com.example.trangchu.models.LoaiMon_MonAn;
-import com.example.trangchu.models.MonAn;
+import com.example.trangchu.models.LoaiMon;
 
 import java.util.ArrayList;
 
 public class LoaiMon_TCAdapter extends RecyclerView.Adapter<LoaiMon_TCAdapter.LoaiMon_TCViewHolder> {
     private Context context;
-    private ArrayList<LoaiMon_MonAn> listLoaiMon;
+    private ArrayList<LoaiMon> listLoaiMon;
     private IRecycleViewClickListerner i;
     public LoaiMon_TCAdapter(Context mcontext){
         this.context=mcontext;
     }
-    public void setData(ArrayList<LoaiMon_MonAn> list,IRecycleViewClickListerner i){
+    public void setData(ArrayList<LoaiMon> list,IRecycleViewClickListerner i){
         this.i=i;
         this.listLoaiMon=list;
         notifyDataSetChanged();
@@ -41,7 +39,7 @@ public class LoaiMon_TCAdapter extends RecyclerView.Adapter<LoaiMon_TCAdapter.Lo
 
     @Override
     public void onBindViewHolder(@NonNull LoaiMon_TCViewHolder holder, int position) {
-        LoaiMon_MonAn loaimon=listLoaiMon.get(position);
+        LoaiMon loaimon=listLoaiMon.get(position);
         if(loaimon==null){
             return;
         }
@@ -56,7 +54,7 @@ public class LoaiMon_TCAdapter extends RecyclerView.Adapter<LoaiMon_TCAdapter.Lo
 
     @Override
     public int getItemCount() {
-        if(listLoaiMon.size()!=0){
+        if(listLoaiMon!=null){
             return listLoaiMon.size();
         }
         return 0;

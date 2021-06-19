@@ -24,6 +24,9 @@
             android:background="@color/color_tv_loaimon_monan_item"
             android:fontFamily="@font/patrick_hand"
             android:text="Chân giò kho tiêu"
-            android:textAlignment="center" />
+            android:maxEms="18"
+            android:textAlignment="center"
+            android:ellipsize="end"
+            android:singleLine="true" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

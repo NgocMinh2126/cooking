@@ -34,8 +34,13 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.MarketView
             return;
         }
         holder.tv_tennglieu.setText(nl.getTen());
-        String str=nl.getSoluong()+" "+nl.getDonvi();
-        holder.tv_slnglieu.setText(str);
+        if(nl.getSoluong()!=0){
+            String str=nl.getSoluong()+" "+nl.getDonvi();
+            holder.tv_slnglieu.setText(str);
+        }else{
+            holder.tv_slnglieu.setText("Tùy lượng dùng");
+        }
+
     }
 
     @Override

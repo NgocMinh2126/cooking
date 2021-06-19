@@ -2,4 +2,22 @@
     <string name="app_name">Cooking with 3CAN5</string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
+    <string name="tip01_title">Dưới đây là vài lưu ý khi học nấu ăn với một số loại gia vị phổ biến.</string>
+    <string name="tip01_muoi">1. Muối</string>
+    <string name="tip01_muoi_detail">Muối là loại gia vị cơ bản nhất trong nấu nướng. Tùy món mà cho muối vào thức ăn trước hay trong khi nấu. Nếu cần thịt đậm đà, không bị giảm độ ngọt của thịt, nên cho muối trước.
+        Ngược lại, khi nấu canh, cần vị ngọt từ xương thì nên nấu một lúc cho nước canh ngọt mới nêm muối</string>
+    <string name="tip01_duong">2. Đường</string>
+    <string name="tip01_duong_detail">Khi cho đường vào các món rán hay nướng, món ăn rất dễ cháy, khét. Do đó, khi ướp, nên cho ít đường. Nếu muốn món ăn có vị ngọt hơn, hãy làm riêng phần nước xốt hoặc phết mật ong lên khi món ăn gần chín.</string>
+    <string name="tip01_hatnem">4. Hạt nêm</string>
+    <string name="tip01_hatnem_detail">Nếu bạn nếm kỹ sẽ nhận thấy hạt nêm có vị mặn, có hương vị của thịt hoặc nấm nên có thể dùng để ướp hay nấu ăn đều được. Không nên cho hạt nêm vào món ăn sau khi đã chín vì như thế hạt nêm không tan được và làm cho món ăn bay mùi của hạt nêm rất đậm.</string>
+    <string name="tip01_nuocmam">3. Nước mắm</string>
+    <string name="tip01_nuocmam_detail">Nước mắm là thứ gia vị truyền thống mang đậm màu sắc ẩm thực Việt Nam. Nước mắm có mùi thơm đặc trưng nhưng mùi hương dễ bị biến đổi mùi vị trong quá trình nấu, nên hãy chú ý một số thời điểm nên nêm nước mắm.</string>
+    <string name="tip02_title_1">Lưu ý khi thêm gia vị vào canh</string>
+    <string name="tip02_title_2">Một số bí quyết khác</string>
+    <string name="tip02_noidung_01">Đối với canh bầu, bí đao, bạn không nên nêm nước mắm. Vì nước mắm sẽ khiến canh có vị chua.</string>
+    <string name="tip02_noidung_02">Đối với canh cải, khi nấu nên cho thêm một chút gừng hay rượu.</string>
+    <string name="tip02_noidung_03">Nếu nấu canh với xương thịt, thì hãy nấu một lúc cho xương thịt ra hết chất, đợi cho nước canh ngọt rồi mới nêm muối vào canh.</string>
+    <string name="tip02_noidung_04">Nấu canh bầu bí với xương thịt thì nên xắt thành miếng khoảng 2x3cm, còn nếu nấu với tôm thì xắt nhỏ hơn nữa, khi nấu sẽ ngon hơn.</string>
+    <string name="tip02_noidung_05">Khổ qua chỉ nên nấu với tôm, thịt nạc băm nhỏ mà không nên nấu với thịt bò và cua.</string>
+
 </resources>

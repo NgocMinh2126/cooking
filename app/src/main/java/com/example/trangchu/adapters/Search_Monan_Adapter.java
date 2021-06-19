@@ -1,5 +1,7 @@
 package com.example.trangchu.adapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,9 @@ import com.example.trangchu.IRecycleViewClickListerner;
 import com.example.trangchu.R;
 import com.example.trangchu.models.MonAn;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class Search_Monan_Adapter extends RecyclerView.Adapter<Search_Monan_Adapter.Search_Monan_ViewHolder> implements Filterable {
@@ -24,7 +29,7 @@ public class Search_Monan_Adapter extends RecyclerView.Adapter<Search_Monan_Adap
     private ArrayList<MonAn>listMonAn;
     private ArrayList<MonAn>listMonAn_old;
     private ArrayList<MonAn>listMonAn_short;
-    public void setData(IRecycleViewClickListerner i,ArrayList<MonAn>list){
+    public void setData(ArrayList<MonAn>list,IRecycleViewClickListerner i){
         this.i=i;
         this.listMonAn_old=list;
         if(list.size()<=15){
@@ -53,8 +58,16 @@ public class Search_Monan_Adapter extends RecyclerView.Adapter<Search_Monan_Adap
         if(monan==null){
             return;
         }
-        holder.search_tenmon_item.setText(monan.getTen());
-        holder.search_img_monan_item.setImageResource(monan.getAnh());
+        holder.search_tenmon_item.setText(monan.getTenMonAn());
+        try {
+            URL url=new URL(monan.getAnh());
+            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            holder.search_img_monan_item.setImageBitmap(bmp);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         holder.search_ln_monan_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,7 +107,7 @@ public class Search_Monan_Adapter extends RecyclerView.Adapter<Search_Monan_Adap
                 }else{
                     ArrayList<MonAn>list=new ArrayList<MonAn>();
                     for(MonAn m:listMonAn_old){
-                        if(m.getTen().toLowerCase().contains(keySearch.toLowerCase())){
+                        if(m.getTenMonAn().toLowerCase().contains(keySearch.toLowerCase())){
                             list.add(m);
                         }
                     }

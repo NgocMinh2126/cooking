@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dsmonan_item"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size100dp"
+    android:layout_marginTop="@dimen/size10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/dsmonan_img_item"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_dsmonan_item_ani"/>
+
+    <TextView
+        android:id="@+id/dsmonan_tenmon_item"
+        android:layout_width="@dimen/size200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrey"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/dsmonan_img_item"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dsmonan_tenmon_item"
+        android:layout_alignLeft="@+id/dsmonan_tenmon_item"
+        android:text="------------------------------------------------" />
+
+    <ToggleButton
+        android:id="@+id/dsmonan_btn_like_item"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/btn_like"
+        android:textColor="@android:color/transparent" />
+</RelativeLayout>
