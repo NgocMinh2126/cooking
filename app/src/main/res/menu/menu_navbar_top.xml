@@ -10,6 +10,16 @@
         android:title="Profile"
         android:icon="@drawable/ic_user"
         app:showAsAction="always"
-        android:id="@+id/profile_btn"/>
-
+        android:id="@+id/dnhap_btn"/>
+    <group
+        android:id="@+id/da_dnhap"
+        android:visible="false">
+        <item
+            android:title="Thông tin của bạn"
+            android:id="@+id/user_thongtin"/>
+        <item
+            android:title="Đăng xuất"
+            android:id="@+id/user_dangxuat"
+            android:icon="@drawable/ic_dxuat"/>
+    </group>
 </menu>

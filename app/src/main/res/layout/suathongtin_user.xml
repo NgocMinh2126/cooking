@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--    ảnh background-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_imgsuauser" />
+    <!--    btn hủy sửa user-->
+    <ImageButton
+        android:id="@+id/imgbtn_huy"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_cancle" />
+    <!--    btn lưu sửa user-->
+    <ImageButton
+        android:id="@+id/imgbtn_luu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_save" />
+    <!--ảnh đại diện hình tròn    -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+    <!--btn thêm ảnh đại diện    -->
+    <ImageButton
+        android:id="@+id/imgbtn_themanh"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@+id/avatar"
+        android:layout_alignBottom="@+id/avatar"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/icon_addimg" />
+    <!--form chỉnh sửa thông tin   -->
+    <RelativeLayout
+        android:id="@+id/form_dangki"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/bg_suauser"
+        android:padding="10dp">
+
+
+        <TextView
+            android:id="@+id/tv_hoten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:text="Họ tên"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edituser_hoten"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/tv_hoten"
+            android:background="@drawable/bg_corner_dnhap"
+            android:inputType="text"
+            android:hint="Họ tên"
+            android:text="Hiện họ tên:" />
+
+        <TextView
+            android:id="@+id/tv_ngay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edituser_hoten"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:text="Ngày sinh"
+            android:textStyle="bold" />
+        <!--btn chọn ngày từ datepicker-->
+        <Button
+            android:id="@+id/edituser_ngaysinh"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/tv_ngay"
+            android:layout_marginTop="-5dp"
+            android:backgroundTint="#ffeaa7"
+            android:gravity="center|left"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edituser_ngaysinh"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:text="Mail"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edituser_mail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/tv_mail"
+            android:background="@drawable/bg_corner_dnhap"
+            android:inputType="textEmailAddress"
+            android:hint="Mail"
+            android:text="Hiện mail" />
+
+    </RelativeLayout>
+    <!--    Xem ảnh avatar full mà hình-->
+    <ImageView
+        android:id="@+id/hienanh_fullscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/tuyen"
+        android:scaleType="centerCrop"
+        android:visibility="gone"/>
+</RelativeLayout>

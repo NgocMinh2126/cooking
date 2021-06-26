@@ -2,15 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.trangchu">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Apptheme">
-        <activity android:name=".activity.IntroductorActivity">
-        </activity>
+        android:theme="@style/Theme.AppTheme">
+        <activity android:name=".activity.IntroductorActivity"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,13 +18,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <activity android:name=".activity.SearchActivity">
-        </activity>
+
+        <activity android:name=".activity.SearchActivity"></activity>
         <activity android:name=".activity.DSMonAnActivity"></activity>
         <activity android:name=".activity.Tip_ChiTietActivity"></activity>
+        <activity android:name=".activity.MonAnYeuThichActivity">
+        </activity>
+
+        <activity android:name=".activity.DangNhapActivity">
+        </activity>
+        <activity android:name=".activity.DangKyActivity">
+        </activity>
+        <activity android:name=".activity.ThongTinUserActivity"></activity>
+        <activity android:name=".activity.DoiMKActivity">
+        </activity>
+        <activity android:name=".activity.ChinhSachActivity"></activity>
+        <activity android:name=".activity.GioiThieuActivity"></activity>
+        <activity android:name=".activity.DongGopYKienActivity"></activity>
+        <activity android:name=".activity.SuaUserActivity">
+
+        </activity>
+        <activity android:name=".activity.ThucDonCuaBanActivity">
+        </activity>
+        <activity android:name=".activity.ThucDonCuaBan_ChiTietActivity"></activity>
     </application>
 
 </manifest>

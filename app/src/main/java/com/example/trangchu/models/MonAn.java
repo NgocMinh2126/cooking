@@ -11,6 +11,7 @@ public class MonAn {
     private int LuotThich;
     private int LuotChiaSe;
     private String clip;
+    private int DaThich;
     public MonAn(String id,String tenMonAn, List<NguyenLieu> listNgLieu) {
         this.id=id;
         TenMonAn = tenMonAn;
@@ -31,6 +32,20 @@ public class MonAn {
         this.id = id;
         TenMonAn = tenMonAn;
         Anh = anh;
+    }
+    public MonAn(String id, String tenMonAn, String anh,int like) {
+        this.id = id;
+        TenMonAn = tenMonAn;
+        Anh = anh;
+        this.DaThich=like;
+    }
+
+    public void setDaThich(int daThich) {
+        DaThich = daThich;
+    }
+
+    public int getDaThich() {
+        return DaThich;
     }
 
     public MonAn(String id, String tenMonAn, List<NguyenLieu> listNgLieu, List<String> cachLam, String anh, int luotThich, int luotChiaSe, String clip) {

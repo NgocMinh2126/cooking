@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/only_user_menu"
+        android:visible="false">
         <item
             android:id="@+id/monan_yeuthich"
             android:title="Món ăn yêu thích"
@@ -19,6 +21,9 @@
                 <item
                     android:id="@+id/chaosup"
                     android:title="Cháo/súp"/>
+                <item
+                    android:id="@+id/monxao"
+                    android:title="Các món xào"/>
                 <item
                     android:id="@+id/monnuong"
                     android:title="Các món nướng"/>
@@ -40,8 +45,8 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/lienhe"
-                    android:title="Liên hệ"/>
+                    android:id="@+id/gioithieu"
+                    android:title="Giới thiệu"/>
                 <item
                     android:id="@+id/chinhsach"
                     android:title="Chính sách và quyền riêng tư"/>

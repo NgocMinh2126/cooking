@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/userinfo_collapsingtoolbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:collapsedTitleTextAppearance="@font/itim"
+            app:expandedTitleTextAppearance="@font/itim"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/userinfo_img_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"/>
+            <androidx.appcompat.widget.Toolbar
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                app:layout_collapseMode="pin">
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/bg_thongtinuser"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="@dimen/size40dp"
+                android:id="@+id/tieude_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:text="THÔNG TIN CỦA BẠN"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_marginLeft="@dimen/size10dp"
+                android:layout_marginRight="@dimen/size10dp"
+                android:layout_marginTop="@dimen/size10dp"
+                android:layout_below="@+id/tieude_user"
+                android:id="@+id/thongtin_01"
+                android:background="@drawable/bg_thongtinuser1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/userinfo_tv_hoten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_toRightOf="@+id/userinfo_tv_hoten"
+                    android:src="@drawable/icon_chef" />
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_below="@+id/userinfo_tv_hoten"
+                    android:src="@drawable/icon_date" />
+
+                <TextView
+                    android:id="@+id/userinfo_tv_ngaysinh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userinfo_tv_hoten"
+                    android:layout_marginLeft="30dp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_below="@+id/userinfo_tv_ngaysinh"
+                    android:src="@drawable/icon_mail" />
+
+                <TextView
+                    android:id="@+id/userinfo_tv_mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userinfo_tv_ngaysinh"
+                    android:layout_marginLeft="30dp"/>
+            </RelativeLayout>
+            <!--Danh sách-->
+            <TextView
+                android:id="@+id/tv_danhsach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thongtin_01"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/size25dp"
+                android:text="DANH SÁCH"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:id="@+id/danhsach"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_danhsach"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+                <!--BTN món ăn yêu thích-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_thongtinuser"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/icon_heart" />
+
+                    <Button
+                        android:id="@+id/userinfo_btn_monanyeuthich"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#fd5327"
+                        android:text="Món ăn yêu thích"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+                <!--BTN Thực đơn của tôi-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_thongtinuser"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/icon_menu" />
+
+                    <Button
+                        android:id="@+id/userinfo_btn_thucdon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#e77d36"
+                        android:text="Thực đơn của tôi"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--Tài khoản-->
+            <TextView
+                android:id="@+id/tv_taikhoan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/danhsach"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:text="TÀI KHOẢN"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@id/taikhoan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_taikhoan"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+                <!--BTN chỉnh sửa thông tin user -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_thongtinuser"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/icon_edit" />
+
+                    <Button
+                        android:id="@+id/userinfo_btn_chinhsuathongtin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#1898F8"
+                        android:text="Chỉnh sửa thông tin"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+                <!--BTN thay đổi mật khẩu-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_thongtinuser"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/icon_changepass" />
+
+                    <Button
+                        android:id="@+id/userinfo_btn_doimk"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#79609a"
+                        android:text="Thay đổi mật khẩu"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--Thông tin-->
+            <TextView
+                android:id="@+id/tv_thongtin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/taikhoan"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:text="THÔNG TIN"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@id/thongtin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_thongtin"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+                <!--BTN Thông tin ứng dụng-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_thongtinuser"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/icon_info" />
+
+                    <Button
+                        android:id="@+id/userinfo_btn_thongtiungdung"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#EAC52C"
+                        android:text="Thông tin ứng dụng"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+                <!--BTN Đóng góp ý kiến-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_thongtinuser"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/icon_call" />
+
+                    <Button
+                        android:id="@+id/userinfo_btn_donggopykien"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#59c622"
+                        android:text="Đóng góp ý kiến"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--btn đăng xuất-->
+            <Button
+                android:id="@+id/userinfo_btn_dangxuat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thongtin"
+                android:layout_margin="10dp"
+                android:backgroundTint="#EADA2C"
+                android:padding="15dp"
+                android:text="đăng xuất"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/userinfo_img_fullscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:visibility="gone"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -6,7 +6,7 @@
     android:layout_marginTop="@dimen/size10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_food"
+        android:id="@+id/dsmonan_img_item"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"

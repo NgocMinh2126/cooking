@@ -20,4 +20,73 @@
     <string name="tip02_noidung_04">Nấu canh bầu bí với xương thịt thì nên xắt thành miếng khoảng 2x3cm, còn nếu nấu với tôm thì xắt nhỏ hơn nữa, khi nấu sẽ ngon hơn.</string>
     <string name="tip02_noidung_05">Khổ qua chỉ nên nấu với tôm, thịt nạc băm nhỏ mà không nên nấu với thịt bò và cua.</string>
 
+    <string name="tip03_title_1">Bí quyết nấu cháo thơm ngon, nhanh nhừ, không dính nồi</string>
+    <string name="tip03_title_2">Ngâm gạo 30 phút trước khi nấu</string>
+    <string name="tip03_title_3">Rang gạo trước khi nấu</string>
+    <string name="tip03_title_4">Nấu cháo bằng nước sôi</string>
+    <string name="tip03_title_5">Cho một ít dầu ăn vào cháo</string>
+    <string name="tip03_noidung_1">Cháo là món ăn rất phổ biến ở Việt Nam và các nước châu Á khác. Tuy phổ biến nhưng không phải ai cũng biết cách để nấu ra một nồi cháo thơm ngon, gạo nở mềm đều, nhừ mà lại không dính cháo.</string>
+    <string name="tip03_noidung_2">Trước khi nấu, bạn hãy ngâm gạo với nước lạnh tầm 30 phút. Công đoạn ngâm gạo sẽ giúp cho hạt gạo mềm ra, khi nấu thì cháo sẽ nhừ nhanh hơn.</string>
+    <string name="tip03_noidung_3">Nên rang gạo để cháo nấu nhanh nhừ nhưng không bị nát mà lại còn dậy mùi thơm khó cưỡng.</string>
+    <string name="tip03_noidung_4">Cách làm đúng là hãy nấu nước sôi sau đó mới cho gạo vào nấu, đậy kín nắp nồi rồi tắt bếp, sau 15 phút, bạn bật bếp cho nồi cháo sôi lên lần nữa, sau đó vặn nhỏ lửa hoặc tắt bếp để vậy một lúc, cháo sẽ tự nở nhừ.</string>
+    <string name="tip03_noidung_5">Trong quá trình nấu cháo nếu bạn cho vào nồi cháo một ít dầu ăn, sau khi chín, cháo sẽ có vẻ bóng loáng đẹp mắt mà khi ăn cháo cũng dễ ăn hơn.</string>
+
+    <string name="tip06_title_1">Cách bảo quản trái cây tươi lâu không cần dùng đến tủ lạnh</string>
+    <string name="tip06_title_2">Chọn quả tươi ngon</string>
+    <string name="tip06_title_3">Mẹo giữ độ tươi lâu hơn cho từng loại trái cây</string>
+    <string name="tip06_title_4">Bơ</string>
+    <string name="tip06_title_5">Chuối</string>
+    <string name="tip06_title_6">Cà chua</string>
+    <string name="tip06_title_7">Nho</string>
+    <string name="tip06_noidung_02">Chọn quả tươi, ngon, không bị dập nát. Là những quả không bị xây xát phần vỏ bên ngoài. Nếu cằm lên ngửi thấy mùi thơm đó chính là quả chín tự nhiên, không bị chín ép.</string>
+    <string name="tip06_noidung_04">Để làm chậm quá trình phân hủy của bơ, bạn nên dùng báo bọc chúng lại. Còn nếu quả bơ đã được bổ ra, thì nên dùng màng bọc nilong bọc kín chúng lại để ngăn không cho phần thịt tiếp xúc với không khí.</string>
+    <string name="tip06_noidung_05">Dùng màng bọc nilong quấn phần cùi chuối lại (phần cuối quả chuối) sẽ giúp chúng tươi lâu và giữ độ ngọt lại</string>
+    <string name="tip06_noidung_06">Đơn giản nhất là nên giữ chúng ở những nơi có nhiệt độ thấp (dưới 25 độ) là được. Như vậy thì cà chua sẽ lâu chín hơn và sẽ ngọt hơn.</string>
+    <string name="tip06_noidung_07">Nếu chưa vội ăn liền, bạn có thể chọn những chùm nho vừa chín tới. Sau đó, dùng các bìa cứng hoặc giấy báo quấn quanh chùm nho lại.</string>
+
+
+
+
+    <!--Giới thiệu ứng dụng-->
+    <string name="gioithieu">- Đã bao giờ bạn phải đau đầu suy nghĩ hôm nay về nhà sẽ nấu những món gì để chồng con thưởng thức?
+        Có khi nào bạn muốn thử làm những món ăn mới lạ, độc đáo hơn hay tạo sự bất ngờ cho gia đình thân yêu của mình?
+        \n- Với các công thức nấu ăn phù hợp với tất cả các chế độ dinh dưỡng, hi vọng ứng dụng "Cooking with 3CAN5" sẽ giúp ích được cho bạn.</string>
+
+<!--    Chính sách-->
+    <string name="header">- Cảm ơn bạn đã sử dụng sản phẩm ứng dụng của chúng tôi! Chúng tôi tôn trọng mối quan tâm của bạn về quyền riêng tư và đánh giá
+        cao sự tin tưởng và tín nhiệm của bạn đối với chúng tôi.\n- CookingWith3CAN5 rất nghiêm túc trong việc tôn trọng quyền riêng tư của bạn. Tài liệu
+        Chính sách bảo mật này chứa các loại thông tin mà chúng tôi có thể thu thập và sử dụng thông tin liên quan của bạn để cải thiện chất lượng của ứng dụng,
+        đem lại ứng dụng tốt nhất cho người dùng.</string>
+    <string name="quyen1">CookingWith3CAN5 - Nấu ăn cùng 3CÂN5 là ứng dụng cực kỳ hữu ích giúp bạn có thể tạo ra những món ăn ngon và nhanh nhất có thể.
+        Với rất nhiều công thức thuộc nhiều nhóm món ăn được ứng dụng chọn lọc và tổng hợp một cách kĩ lưỡng.
+        \n Ứng dụng giúp bạn thỏa niềm đam mê nấu nướng với các tính năng chính sau:\n(1) Tìm kiếm món ăn giúp bạn tìm được món ăn mình cần nhanh hơn.
+        \n(2) Các món ăn ngon được chia theo từng chuyên mục rõ ràng, bạn có thể dễ dàng dạo qua các món ăn.
+        \n(3) Nếu bạn quên các món ăn bạn đã thêm vào thực đơn, chúng tôi sẽ nhắc nhở cho bạn.
+        \n(4) Cho phép bạn thêm món ăn vào danh mục các yêu thích.</string>
+    <!--    2. Quyền sở hữu ứng dụng-->
+    <string name="quyen2">Ứng dụng này được phát triển và sở hữu bởi nhóm 3CAN5, tất cả các quyền sở hữu trí tuệ liên quan đến Ứng dụng (không bao gồm
+        hình ảnh, nội dung chứa đựng bên trong Ứng dụng) và các tài liệu hướng dẫn liên quan (nếu có) sẽ thuộc quyền sở hữu duy nhất bởi 3CAN5 và không cá nhân,
+        tổ chắc nào được phép sao chép, tái tạo phân phối hoặc hình thức khác xâm phạm tới quyền của chủ sở hữu nếu
+        không có sự đồng ý và cho phép bằng văn bản của 3CAN5.</string>
+    <!--    3. Tài khoản-->
+    <string name="quyen3">Để sử dụng Ứng dụng bạn phải tạo một tài khoản theo yêu cầu của chúng tôi, bạn cam kết rằng việc sử dụng tài khoản phải tuân
+    thủ các quuy định của 3CAN5. Đồng thời tất cả các thông tin bạn cung cấp cho chúng tôi là đúng, chính xác, đầy đủ với tại thời điểm được yêu cầu.
+    \n Mọi quyền lợi và nghĩa vụ của bạn sẽ căn cứ trên thông tin tài khoản bạn đã đăng ký, do đó nếu có bất kì thông tin sai lệch nào chúng tôi
+    sẽ không chịu trách nhiệm trong trường hợp thông tin đó làm ảnh hưởng hoặc hạn chế quyền lợi của bạn.</string>
+    <!--    4. Quyền truy cập và thu thập thông tin-->
+    <string name="quyen4">Khi sử dụng Ứng dụng, bạn thừa nhận những rằng chúng tôi có quyền sử dụng những API hệ thống sau để truy cập vào dữ liệu trên
+    điện thoại của bạn: \n(1) Truy cập vào Internet từ thiết bị của bạn. \n(2) Truy cập vào camera và hình ảnh trên thiết bị của bạn.
+    \n Tất cả các truy cập này đều được chúng tôi thực hiện sau khi có được sự đồng ý của bạn, vì vậy bạn cam kết và thùa nhận rầng, khi bạn đã cấp quyền
+    cho chúng tôi, bạn sẽ không có bất kỳ khiếu nại nào đối với 3CAN5 về việc truy cập này.
+    \n Cùng với việc truy cập, chúng tôi sẽ thu thập các Thông tin cá nhân của bạn: bao gồm các thông tin bạn cung cấp cho
+        chúng tôi để xác nhận tài khoản như họ tên, ngày sinh, địa chỉ mail. </string>
+    <!--    5. Cam kết bảo mật thông tin-->
+    <string name="quyen5">3CAN5 cam kết giữ bí mật tất cả thông tin mà bạn cung cấp cho chúng tôi hoặc chúng tôi thu thập từ bạn và không
+    tiết lộ với bất kỳ bên thứ ba nào trừ khi có yêu cầu từ Cơ quan Nhà nước có thẩm quyền.</string>
+    <!--    6. Các thay đổi về chính sách bảo mật-->
+    <string name="quyen6">Chúng tôi có thể cập nhật Chính sách và quyền riêng tư của mình theo thời gian. Chúng tôi sẽ thông báo cho bạn về bất kỳ
+        thay đổi nào bằng cách đăng Chính sách mới trên trang này. Chúng tôi cũng sẽ cho bạn biết qua email hoặc một thông báo nổi bật trên Ứng dụng
+        của chúng tôi, trước khi thay đổi có hiệu lực và cập nhật "ngày có hiệu lực" ở đầu Chính sách Bảo mật này.
+        \n Bạn nên xem lại Chính sách Bảo mật này định kỳ để biết bất kỳ thay đổi nào. Các thay đổi đối với Chính sách và quyền riêng tư này
+        có hiệu lực khi chúng được đăng trên trang này.</string>
 </resources>

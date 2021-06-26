@@ -67,16 +67,16 @@ public class Tip_ChiTietActivity extends AppCompatActivity {
             t.setData("Bí quyết nấu canh",R.drawable.tip_img_02);
             replaceFragment(new Tip02Fragment());
         }else if(str.equals("3")){
-            t.setData("Mẹo nấu cháo",R.drawable.tip_img_02);
+            t.setData("Mẹo nấu cháo",R.drawable.tip03);
             replaceFragment(new Tip03Fragment());
         }else if(str.equals("4")){
-            t.setData("Bí quyết chọn thực phẩm",R.drawable.tip_img_02);
+            t.setData("Bí quyết chọn thực phẩm",R.drawable.tip04);
             replaceFragment(new Tip04Fragment());
         }else if(str.equals("5")){
-            t.setData("Trị bỏng rát khi cắt ớt",R.drawable.tip_img_02);
+            t.setData("Trị bỏng rát khi cắt ớt",R.drawable.tip05);
             replaceFragment(new Tip05Fragment());
         }else if(str.equals("6")){
-            t.setData("Cách bảo quản hoa quả",R.drawable.tip_img_02);
+            t.setData("Cách bảo quản hoa quả",R.drawable.tip06);
             replaceFragment(new Tip06Fragment());
         }
         return t;
@@ -88,14 +88,6 @@ public class Tip_ChiTietActivity extends AppCompatActivity {
         Bitmap bitmap= BitmapFactory.decodeResource(getResources(),tip.getAnh());
         tip_collapsing.setStatusBarScrimColor(getResources().getColor(R.color.color_basic));
         tip_collapsing.setContentScrimColor(getResources().getColor(R.color.color_basic));
-//        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
-//            @Override
-//            public void onGenerated(@Nullable Palette palette) {
-//                int color=palette.getVibrantColor(getResources().getColor(R.color.color_basic));
-//                tip_collapsing.setContentScrimColor(color);
-//                tip_collapsing.setStatusBarScrimColor(getResources().getColor(R.color.color_basic));
-//            }
-//        });
         tip_collapsing.setExpandedTitleTextAppearance(R.style.ExpandedAppBar);
         tip_collapsing.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
     }
@@ -112,7 +104,6 @@ public class Tip_ChiTietActivity extends AppCompatActivity {
     }
 
     public void replaceFragment(Fragment fragment){
-        Log.i("chk","hihi");
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.rl_tip_item,fragment);
         fragmentTransaction.commit();

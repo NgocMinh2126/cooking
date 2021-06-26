@@ -54,10 +54,10 @@ public class TipsFragment extends Fragment {
         List<Tips>list=new ArrayList<Tips>();
         list.add(new Tips(1,"Bí quyết nêm nếm",R.drawable.tip_img_01));
         list.add(new Tips(2,"Bí quyết nấu canh",R.drawable.tip_img_02));
-        list.add(new Tips(3,"Mẹo nấu cháo",R.drawable.tip_img_02));
-        list.add(new Tips(4,"Bí quyết chọn thực phẩm",R.drawable.tip_img_02));
-        list.add(new Tips(5,"Trị bỏng rát khi cắt ớt",R.drawable.tip_img_02));
-        list.add(new Tips(6,"Cách bảo quản hoa quả",R.drawable.tip_img_02));
+        list.add(new Tips(3,"Mẹo nấu cháo",R.drawable.tip03));
+        list.add(new Tips(4,"Bí quyết chọn thực phẩm",R.drawable.tip04));
+        list.add(new Tips(5,"Trị bỏng rát khi cắt ớt",R.drawable.tip05));
+        list.add(new Tips(6,"Cách bảo quản hoa quả",R.drawable.tip06));
         return list;
     }
 

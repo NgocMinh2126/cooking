@@ -1,6 +1,8 @@
 package com.example.trangchu.adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.trangchu.IRecycleViewClickListerner;
 import com.example.trangchu.R;
+import com.example.trangchu.activity.DSMonAnActivity;
 import com.example.trangchu.models.LoaiMon;
 
 import java.util.ArrayList;
@@ -22,12 +25,21 @@ public class LoaiMon_TCAdapter extends RecyclerView.Adapter<LoaiMon_TCAdapter.Lo
     private Context context;
     private ArrayList<LoaiMon> listLoaiMon;
     private IRecycleViewClickListerner i;
+    private Activity activity;
+    private String userid;
     public LoaiMon_TCAdapter(Context mcontext){
         this.context=mcontext;
     }
-    public void setData(ArrayList<LoaiMon> list,IRecycleViewClickListerner i){
+    public void setData(ArrayList<LoaiMon> list, Activity activity, IRecycleViewClickListerner i){
         this.i=i;
         this.listLoaiMon=list;
+        this.activity=activity;
+        notifyDataSetChanged();
+    } public void setData2(ArrayList<LoaiMon> list,String userid, Activity activity, IRecycleViewClickListerner i){
+        this.i=i;
+        this.userid=userid;
+        this.listLoaiMon=list;
+        this.activity=activity;
         notifyDataSetChanged();
     }
     @NonNull
@@ -50,6 +62,15 @@ public class LoaiMon_TCAdapter extends RecyclerView.Adapter<LoaiMon_TCAdapter.Lo
                 = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         holder.rv_loaimon_trangchu_item.setLayoutManager(layoutManager);
         holder.rv_loaimon_trangchu_item.setAdapter(loaiMon_monAnAdapter);
+        holder.btn_tatca_loaimon_trangchu_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(activity, DSMonAnActivity.class);
+                intent.putExtra("UserID",userid+"");
+                intent.putExtra("TenLoaiMon",loaimon.getTenLoaiMon());
+                v.getContext().startActivity(intent);;
+            }
+        });
     }
 
     @Override

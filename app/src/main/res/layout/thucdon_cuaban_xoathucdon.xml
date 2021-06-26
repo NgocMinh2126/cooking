@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_corner_dnhap"
+    android:layout_margin="@dimen/size20dp">
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/size40dp"
+       android:gravity="center"
+       android:background="@drawable/bg_xoathucdon_01"
+       android:text="Xóa thực đơn"
+       android:textSize="@dimen/textsize20sp"
+       android:textColor="@color/white"/>
+    <TextView
+        android:layout_marginTop="@dimen/size15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize16sp"
+        android:textAlignment="center"
+        android:text="Bạn có chắc chắn muốn xóa thực đơn này không?"/>
+    <RelativeLayout
+        android:padding="@dimen/size20dp"
+        android:layout_marginTop="@dimen/size20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/xoathucdon_btn_huy"
+            android:layout_width="@dimen/size150dp"
+            android:layout_height="@dimen/size50dp"
+            android:text="Hủy"
+            android:background="@drawable/bg_xoamonan_btn_cancel"/>
+        <Button
+            android:id="@+id/xoathucdon_btn_ok"
+            android:layout_width="@dimen/size150dp"
+            android:layout_height="@dimen/size50dp"
+            android:text="Xác nhận"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_coner_btn"/>
+    </RelativeLayout>
+</LinearLayout>

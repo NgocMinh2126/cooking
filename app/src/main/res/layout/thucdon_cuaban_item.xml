@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/bg_thucdoncuaban_coner">
+    <TextView
+        android:id="@+id/ngay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày: "
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="30dp"/>
+    <TextView
+        android:id="@+id/thucdoncuaban_ngay_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23/06/2021"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:layout_toRightOf="@id/ngay"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:id="@+id/buoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buổi: "
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/ngay"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/thucdoncuaban_buoi_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sáng"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:layout_toRightOf="@id/buoi"
+        android:layout_below="@id/thucdoncuaban_ngay_item"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"/>
+</RelativeLayout>
