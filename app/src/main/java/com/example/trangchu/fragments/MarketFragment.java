@@ -50,6 +50,7 @@ public class MarketFragment extends Fragment {
     RelativeLayout maket_onlyforuser;
     Button btn_dnhap;
     RelativeLayout market_guest;
+    LinearLayoutManager layoutManager;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class MarketFragment extends Fragment {
         mainActivity=(MainActivity) getActivity();
         Intent intent=mainActivity.getIntent();
         userid=intent.getStringExtra("UserID");
+        Log.i("chkmarket",userid+"");
 
         nointernet=view.findViewById(R.id.market_nointernet);
         rv_market=view.findViewById(R.id.rv_market);
@@ -67,10 +69,11 @@ public class MarketFragment extends Fragment {
         btn_dnhap=view.findViewById(R.id.fragment_market_dnhap);
         maket_onlyforuser=view.findViewById(R.id.fragment_market_foruser);
         checkInternetConnection();
+        layoutManager=new LinearLayoutManager(view.getContext(),LinearLayoutManager.VERTICAL,false);
+
         if(userid!=null){
             maket_onlyforuser.setVisibility(View.VISIBLE);
             setNgLieu();
-            LinearLayoutManager layoutManager=new LinearLayoutManager(view.getContext(),LinearLayoutManager.VERTICAL,false);
             rv_market.setLayoutManager(layoutManager);
             market_guest.setVisibility(View.GONE);
         }else{
@@ -82,11 +85,32 @@ public class MarketFragment extends Fragment {
                 }
             });
         }
-
         return view;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(userid!=null){
+            maket_onlyforuser.setVisibility(View.VISIBLE);
+            LinearLayoutManager layoutManager2=new LinearLayoutManager(this.getContext(),LinearLayoutManager.VERTICAL,false);
+            setNgLieu();
+            rv_market.setLayoutManager(layoutManager2);
+            Log.i("chkmarket","gone");
+            market_guest.setVisibility(View.GONE);
+        }else{
+            btn_dnhap.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(getActivity(), DangNhapActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+    }
+
     public void setNgLieu(){
-        Log.i("chkMarket","helo");
+        Log.i("chkmarket","set nglieu");
         List<NguyenLieu>list=new ArrayList<NguyenLieu>();
         RequestParams rp = new RequestParams();
         String duongdan="thucdon/nglieu/"+userid;
@@ -114,13 +138,14 @@ public class MarketFragment extends Fragment {
                     marketAdapter=new MarketAdapter();
                     marketAdapter.setData(list);
                     rv_market.setAdapter(marketAdapter);
+                    tb_nglieu.setVisibility(View.VISIBLE);
+                    ln_baoloi.setVisibility(View.GONE);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
                 tb_nglieu.setVisibility(View.GONE);
                 ln_baoloi.setVisibility(View.VISIBLE);
             }

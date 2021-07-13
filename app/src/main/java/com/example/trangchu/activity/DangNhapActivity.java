@@ -123,35 +123,6 @@ public class DangNhapActivity extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
                             }
-
-//                            @Override
-//                            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
-//                                super.onFailure(statusCode, headers, throwable, errorResponse);
-//                                layout_dnhap_username.setBackground(getResources().getDrawable(R.drawable.bg_warning));
-//                                layout_dnhap_pass.setBackground(getResources().getDrawable(R.drawable.bg_warning));
-//                                layout_dnhap_username.setError("Username hoặc mật khẩu không đúng");
-//                                layout_dnhap_pass.setError("Username hoặc mật khẩu không đúng");
-//                            }
-////
-//                            @Override
-//                            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-//                                super.onFailure(statusCode, headers, responseString, throwable);
-//                                layout_dnhap_username.setBackground(getResources().getDrawable(R.drawable.bg_warning));
-//                                layout_dnhap_pass.setBackground(getResources().getDrawable(R.drawable.bg_warning));
-//                                layout_dnhap_username.setError("Username hoặc mật khẩu không đúng");
-//                                layout_dnhap_pass.setError("Username hoặc mật khẩu không đúng");
-//                            }
-//
-//                            @Override
-//                            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-//                                super.onFailure(statusCode, headers, throwable, errorResponse);
-//                                Log.d("TAG" , "onFailure : "+statusCode);
-//                                layout_dnhap_username.setBackground(getResources().getDrawable(R.drawable.bg_warning));
-//                                layout_dnhap_pass.setBackground(getResources().getDrawable(R.drawable.bg_warning));
-//                                layout_dnhap_username.setError("Username hoặc mật khẩu không đúng");
-//                                layout_dnhap_pass.setError("Username hoặc mật khẩu không đúng");
-//                            }
-
                             @Override
                             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                                 layout_dnhap_username.setBackground(getResources().getDrawable(R.drawable.bg_warning));

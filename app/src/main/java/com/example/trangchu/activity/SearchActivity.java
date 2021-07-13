@@ -119,7 +119,10 @@ public class SearchActivity extends AppCompatActivity {
                         search_monan_adapter.setData(list, new IRecycleViewClickListerner() {
                             @Override
                             public void onItemClick(MonAn monan) {
-                                Toast.makeText(context, monan.getTenMonAn(), Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(SearchActivity.this, MonAnChiTietActivity.class);
+                                intent.putExtra("UserID",userid+"");
+                                intent.putExtra("IDMonAn",monan.getId());
+                                startActivity(intent);
                             }
                         });
                         search_monan_rv.setAdapter(search_monan_adapter);
@@ -176,10 +179,12 @@ public class SearchActivity extends AppCompatActivity {
     public ArrayList<LoaiMon> setDataLoaiMon() {
         ArrayList<LoaiMon> list = new ArrayList<LoaiMon>();
         list.add(new LoaiMon("Bữa ăn thường ngày", "60935f3e3212664344ac98bf"));
-        list.add(new LoaiMon("Cháo súp", "60935f3e3212664344ac98c1"));
-        list.add(new LoaiMon("Món nướng", "60935f3e3212664344ac98c0"));
+        list.add(new LoaiMon("Món cháo, súp", "60935f3e3212664344ac98c1"));
+        list.add(new LoaiMon("Các món nướng", "60935f3e3212664344ac98c0"));
         list.add(new LoaiMon("Món tráng miệng", "60935f3e3212664344ac98c2"));
-        list.add(new LoaiMon("Các món ăn chay", "60935f3e3212664344ac98c3"));
+        list.add(new LoaiMon("Món ăn chay", "60935f3e3212664344ac98c3"));
+        list.add(new LoaiMon("Giảm cân", "60935f3e3212664344ac98c7"));
+        list.add(new LoaiMon("Món xào", "60935f3e3212664344ac98c1"));
         return list;
     }
 }

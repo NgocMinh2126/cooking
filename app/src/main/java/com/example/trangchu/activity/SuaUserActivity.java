@@ -43,6 +43,7 @@ import java.util.Calendar;
 
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.entity.StringEntity;
+import cz.msebera.android.httpclient.protocol.HTTP;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SuaUserActivity extends AppCompatActivity {
@@ -213,7 +214,7 @@ public class SuaUserActivity extends AppCompatActivity {
             jsonParams.put("NgaySinh",ngaysinh);
             jsonParams.put("Mail",mail);
             jsonParams.put("Anh","https://i.ibb.co/sj8SQyM/pic-macdinh.jpg");
-            StringEntity entity = new StringEntity(jsonParams.toString());
+            StringEntity entity = new StringEntity(jsonParams.toString(), HTTP.UTF_8);
             HttpUtils.post(context,duongdan, entity, new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -222,6 +223,7 @@ public class SuaUserActivity extends AppCompatActivity {
                     Intent intent=new Intent(SuaUserActivity.this,ThongTinUserActivity.class);
                     intent.putExtra("UserID",userid);
                     startActivity(intent);
+                    finish();
                 }
 
                 @Override
@@ -230,7 +232,7 @@ public class SuaUserActivity extends AppCompatActivity {
                     Log.i("chk","update that bai");
                 }
             });
-        } catch (JSONException | UnsupportedEncodingException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
         }
     }

@@ -26,6 +26,7 @@
         <activity android:name=".activity.SearchActivity"></activity>
         <activity android:name=".activity.DSMonAnActivity"></activity>
         <activity android:name=".activity.Tip_ChiTietActivity"></activity>
+        <activity android:name=".activity.MonAnChiTietActivity"></activity>
         <activity android:name=".activity.MonAnYeuThichActivity">
         </activity>
 

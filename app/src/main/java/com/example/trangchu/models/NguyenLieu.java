@@ -17,6 +17,10 @@ public class NguyenLieu {
         this.id = id;
     }
 
+    public NguyenLieu(String ten) {
+        Ten = ten;
+    }
+
     public String getTen() {
         return Ten;
     }

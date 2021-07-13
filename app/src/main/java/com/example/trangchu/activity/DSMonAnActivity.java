@@ -134,7 +134,10 @@ public class DSMonAnActivity extends AppCompatActivity {
                         dsmonan_adapter.setData2(list, activity, userid, new IRecycleViewClickListerner() {
                             @Override
                             public void onItemClick(MonAn monan) {
-
+                                Intent intent=new Intent(DSMonAnActivity.this, MonAnChiTietActivity.class);
+                                intent.putExtra("UserID",userid+"");
+                                intent.putExtra("IDMonAn",monan.getId());
+                                startActivity(intent);
                             }
                         });
                         dsmonan_rv.setAdapter(dsmonan_adapter);
@@ -164,7 +167,10 @@ public class DSMonAnActivity extends AppCompatActivity {
                         dsmonan_adapter.setData(list, new IRecycleViewClickListerner() {
                             @Override
                             public void onItemClick(MonAn monan) {
-
+                                Intent intent=new Intent(DSMonAnActivity.this, MonAnChiTietActivity.class);
+                                intent.putExtra("UserID",userid+"");
+                                intent.putExtra("IDMonAn",monan.getId());
+                                startActivity(intent);
                             }
                         });
                         dsmonan_rv.setAdapter(dsmonan_adapter);

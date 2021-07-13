@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.trangchu.IRecycleViewClickListerner;
 import com.example.trangchu.R;
 import com.example.trangchu.activity.MainActivity;
+import com.example.trangchu.activity.MonAnChiTietActivity;
 import com.example.trangchu.adapters.HomNayAnGiAdapter;
 import com.example.trangchu.adapters.LoaiMon_TCAdapter;
 import com.example.trangchu.adapters.TC_MonAnAdapter;
@@ -70,7 +71,6 @@ public class TrangChufragment extends Fragment {
         mainActivity=(MainActivity) getActivity();
         Intent intent=mainActivity.getIntent();
         userid=intent.getStringExtra("UserID");
-
 
         Log.i("chkmain",""+userid);
         nointernet=view.findViewById(R.id.nointernet);
@@ -128,7 +128,10 @@ public class TrangChufragment extends Fragment {
                             tc_monAnAdapter.setData(listMonAnNoiBat, new IRecycleViewClickListerner() {
                                 @Override
                                 public void onItemClick(MonAn monan) {
-                                    Toast.makeText(view.getContext(), monan.getTenMonAn(), Toast.LENGTH_SHORT).show();
+                                    Intent intent=new Intent(getActivity(), MonAnChiTietActivity.class);
+                                    intent.putExtra("UserID",userid+"");
+                                    intent.putExtra("IDMonAn",monan.getId());
+                                    startActivity(intent);
                                 }
                             });
                             rv_noibat.setAdapter(tc_monAnAdapter);
@@ -222,8 +225,10 @@ public class TrangChufragment extends Fragment {
                             homayangiAdapter.setData(lstForAdapter, new IRecycleViewClickListerner() {
                                 @Override
                                 public void onItemClick(MonAn monan) {
-                                    Toast.makeText(view.getContext(), monan.getTenMonAn(), Toast.LENGTH_SHORT).show();
-                                }
+                                    Intent intent=new Intent(getActivity(), MonAnChiTietActivity.class);
+                                    intent.putExtra("UserID",userid+"");
+                                    intent.putExtra("IDMonAn",monan.getId());
+                                    startActivity(intent);                                }
                             });
                             rv_trangchu_homnayangi.setAdapter(homayangiAdapter);
                             homnayangi_ani.startShimmer();
@@ -255,16 +260,20 @@ public class TrangChufragment extends Fragment {
                                 trangchu_loaimon.setData2(listLoaiMon,userid,getActivity(), new IRecycleViewClickListerner() {
                                     @Override
                                     public void onItemClick(MonAn monan) {
-                                        Toast.makeText(view.getContext(), monan.getTenMonAn(), Toast.LENGTH_SHORT).show();
-                                    }
+                                        Intent intent=new Intent(getActivity(), MonAnChiTietActivity.class);
+                                        intent.putExtra("UserID",userid+"");
+                                        intent.putExtra("IDMonAn",monan.getId());
+                                        startActivity(intent);                                    }
                                 });
                             }else{
                                 trangchu_loaimon = new LoaiMon_TCAdapter(view.getContext());
                                 trangchu_loaimon.setData(listLoaiMon,getActivity(), new IRecycleViewClickListerner() {
                                     @Override
                                     public void onItemClick(MonAn monan) {
-                                        Toast.makeText(view.getContext(), monan.getTenMonAn(), Toast.LENGTH_SHORT).show();
-                                    }
+                                        Intent intent=new Intent(getActivity(), MonAnChiTietActivity.class);
+                                        intent.putExtra("UserID",userid+"");
+                                        intent.putExtra("IDMonAn",monan.getId());
+                                        startActivity(intent);                                    }
                                 });
                             }
                             rv_trangchu_loaimon.setAdapter(trangchu_loaimon);

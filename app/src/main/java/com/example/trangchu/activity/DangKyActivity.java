@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ import java.util.Calendar;
 
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.entity.StringEntity;
+import cz.msebera.android.httpclient.protocol.HTTP;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DangKyActivity extends AppCompatActivity {
@@ -181,6 +183,13 @@ public class DangKyActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+
+            }
+        });
+        chk_dkhoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_chk_dkhoan.setTextColor(getResources().getColor(R.color.black));
 
             }
         });
@@ -333,7 +342,7 @@ public class DangKyActivity extends AppCompatActivity {
             jsonParams.put("Password",pass);
             jsonParams.put("Mail",mail);
             jsonParams.put("PhanQuyen",1);
-            StringEntity entity = new StringEntity(jsonParams.toString());
+            StringEntity entity = new StringEntity(jsonParams.toString(), HTTP.UTF_8);
             HttpUtils.post(context,"user/", entity, new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -348,7 +357,7 @@ public class DangKyActivity extends AppCompatActivity {
                     layout_username.setError("Username này đã có người dùng");
                 }
             });
-        } catch (JSONException | UnsupportedEncodingException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
         }
     }

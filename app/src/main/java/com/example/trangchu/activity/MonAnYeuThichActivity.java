@@ -2,6 +2,7 @@ package com.example.trangchu.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -94,7 +95,10 @@ public class MonAnYeuThichActivity extends AppCompatActivity {
                     dsmonanyeuthich_adapter.setData(listMonAn,userid, new IRecycleViewClickListerner() {
                         @Override
                         public void onItemClick(MonAn monan) {
-
+                            Intent intent=new Intent(MonAnYeuThichActivity.this, MonAnChiTietActivity.class);
+                            intent.putExtra("UserID",userid+"");
+                            intent.putExtra("IDMonAn",monan.getId());
+                            startActivity(intent);
                         }
                     });
                     dsmonanyeuthich_rv.setAdapter(dsmonanyeuthich_adapter);

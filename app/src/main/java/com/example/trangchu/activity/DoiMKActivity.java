@@ -79,7 +79,7 @@ public class DoiMKActivity extends AppCompatActivity {
                         jsonParams.put("OldPass",mk_cu);
                         jsonParams.put("Password",mk_moi);
                         StringEntity entity = new StringEntity(jsonParams.toString());
-                        String duongdan="user/doipass/"+"6091fb1e9fee1f0d0459c67d";
+                        String duongdan="user/doipass/"+userid;
                         HttpUtils.post(v.getContext(),duongdan, entity, new JsonHttpResponseHandler() {
                             @Override
                             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

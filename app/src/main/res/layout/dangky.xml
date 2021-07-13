@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="120dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/bg_dsmonan2"
             android:paddingLeft="10dp"
@@ -45,8 +46,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout_username"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignBottom="@+id/img_user"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size5dp"
+                android:layout_alignTop="@+id/img_user"
                 android:layout_toRightOf="@+id/img_user">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -68,10 +70,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout_name"
+                android:layout_margin="@dimen/size5dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/layout_username"
-                android:layout_alignBottom="@+id/img_name"
+                android:layout_alignTop="@+id/img_name"
                 android:layout_toRightOf="@+id/img_name">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -115,9 +118,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout_mail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size5dp"
+                android:layout_height="match_parent"
                 android:layout_below="@+id/btn_dob"
-                android:layout_alignBottom="@+id/img_mail"
+                android:layout_alignTop="@+id/img_mail"
                 android:layout_toRightOf="@+id/img_mail">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -139,10 +143,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout_password"
+                android:layout_margin="@dimen/size5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_below="@+id/layout_mail"
-                android:layout_alignBottom="@+id/img_pass"
+                android:layout_alignTop="@+id/img_pass"
                 android:layout_toRightOf="@+id/img_pass"
                 app:passwordToggleEnabled="true">
 
@@ -166,9 +171,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout_confirmpass"
                 android:layout_width="match_parent"
+                android:layout_margin="@dimen/size5dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_password"
-                android:layout_alignBottom="@+id/img_confirmpass"
+                android:layout_alignTop="@+id/img_confirmpass"
                 android:layout_toRightOf="@+id/img_confirmpass"
                 app:passwordToggleEnabled="true">
 
@@ -186,7 +192,7 @@
                 android:layout_width="25dp"
                 android:layout_height="20dp"
                 android:layout_below="@+id/layout_confirmpass"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="15dp" />
 
             <TextView
                 android:id="@+id/dangky_chk_dkhoan"
@@ -194,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_confirmpass"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:text="Tôi đồng ý về Điều khoản và Chính sách" />
 
             <Button
@@ -203,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dangky_chk"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_dnhap_btn"
                 android:text="Đăng kí"

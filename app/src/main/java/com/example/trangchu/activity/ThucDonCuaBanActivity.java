@@ -51,6 +51,7 @@ public class ThucDonCuaBanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thucdon_cuaban);
         userid = this.getIntent().getStringExtra("UserID");
+        Log.i("chkthucdon","userid: "+userid);
         lv_thucdoncuaban = findViewById(R.id.thucdoncuaban_lv);
         setDataForThucDonCuaBan();
         thucdoncuaban_loi = findViewById(R.id.thucdoncuaban_loi);
@@ -67,7 +68,9 @@ public class ThucDonCuaBanActivity extends AppCompatActivity {
                 ThucDon t = (ThucDon) thucDonCuaBanAdapter.getItem(position);
                 Intent intent=new Intent(ThucDonCuaBanActivity.this,ThucDonCuaBan_ChiTietActivity.class);
                 intent.putExtra("IDThucDon",t.getId());
+                intent.putExtra("UserID",userid);
                 startActivity(intent);
+                finish();
             }
         });
         lv_thucdoncuaban.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

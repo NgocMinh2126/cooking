@@ -10,7 +10,7 @@ import java.util.Map;
 import cz.msebera.android.httpclient.entity.StringEntity;
 
 public class HttpUtils {
-    private static final String BASE_URL = "https://evening-tor-29508.herokuapp.com/";
+    private static final String BASE_URL = "http://192.168.1.6:3000/";
 
     private static AsyncHttpClient client = new AsyncHttpClient(); //gui va nhan du lieu
     //param: tham số gửi kèm
@@ -28,7 +28,9 @@ public class HttpUtils {
     public static void delete(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
         client.delete(getAbsoluteUrl(url), params, responseHandler);
     }
-
+    public static void put(Context context, String url, StringEntity entity, AsyncHttpResponseHandler responseHandler) {
+        client.put(context,getAbsoluteUrl(url), entity, "application/json", responseHandler);
+    }
     public static void post(Context context, String url, StringEntity entity, AsyncHttpResponseHandler responseHandler) {
         client.post(context,getAbsoluteUrl(url), entity, "application/json", responseHandler);
     }
